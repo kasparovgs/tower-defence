@@ -1,0 +1,6 @@
+type,time,interval,level
+LightInfantry,10,10,4
+Aviation,100,100,1
+HeavyInfantry,10,10,3
+HeroHeavyInfantry,31,30,4
+LightInfantry,2,2,1

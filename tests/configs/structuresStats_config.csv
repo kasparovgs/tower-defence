@@ -1,0 +1,17 @@
+type,upgradeCost,profit,maxHP,repairSpeed,range,damage,fireRate
+Castle,5000,20,4000,2,,,
+Castle,7000,60,6000,5,,,
+Castle,10000,100,9000,10,,,
+Castle,15000,140,13000,20,,,
+Tower,300,,,,4,30,1
+Tower,500,,,,4,50,1
+Tower,750,,,,4,75,1
+Tower,1100,,,,5,110,2
+Wall,300,,500,,,,
+Wall,500,,700,,,,
+Wall,800,,1000,,,,
+Wall,1200,,1350,,,,
+Lair,15000,,,,,,
+Lair,25000,,,,,,
+Lair,40000,,,,,,
+Lair,60000,,,,,,
