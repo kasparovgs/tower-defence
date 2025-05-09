@@ -8,7 +8,7 @@
 
 int main() {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
 
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Tower Defense");
 

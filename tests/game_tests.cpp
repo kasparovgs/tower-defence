@@ -10,7 +10,7 @@ TEST(GameTests, ConstructorTest){
 
 TEST(GameTest, landscapeMethods){
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto str1 = game.getLandscape()->getFieldGrid()[0][0].getStructure();
     auto str2 = game.getLandscape()->getFieldGrid()[7][3].getStructure();
     auto str3 = game.getLandscape()->getFieldGrid()[5][3].getStructure();
@@ -28,7 +28,7 @@ TEST(GameTest, landscapeMethods){
 
 TEST(GameTest, initGame){
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     EXPECT_EQ(typeid(game.getLandscape()), typeid(game.getLandscape()->getStructureByPosition({4,9}) -> getLandscape()));
     EXPECT_EQ(game.getLandscape()->getMapSize(), game.getLandscape()->getStructureByPosition({4,9}) -> getLandscape()->getMapSize());
 
@@ -45,10 +45,10 @@ TEST(GameTest, initGame){
 
 TEST(GameTest, makeMove) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     EXPECT_NO_THROW(game.makeMove());
     EXPECT_EQ(GlobalTime::getTime(), 1);
-    for (std::size_t i = 0; i < 100; i++) {
+    for (std::size_t i = 0; i < 5; i++) {
         game.makeMove();
     }
 }

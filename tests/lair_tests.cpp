@@ -3,8 +3,8 @@
 #include "game.h"
 
 TEST(LairTests, loadStatsFromConfig){
-    EXPECT_NO_THROW(Lair::loadStatsFromConfig("/home/gkasp/oop2024/3/tests/configs/enemies_config.csv"));
-    Lair::loadStatsFromConfig("/home/gkasp/oop2024/3/tests/configs/enemies_config.csv");
+    EXPECT_NO_THROW(Lair::loadStatsFromConfig("tests/configs/enemies_config.csv"));
+    Lair::loadStatsFromConfig("tests/configs/enemies_config.csv");
 
     EXPECT_EQ(Lair::getEnemiesStatsTable()["Aviation"][0]->maxHP_, 200);
     EXPECT_EQ(Lair::getEnemiesStatsTable()["Aviation"][3]->maxHP_, 350);
@@ -43,8 +43,8 @@ TEST(LairTests, loadStatsFromConfig){
 }
 
 TEST(LairTests, loadReleaseQueueFromConfig){
-    EXPECT_NO_THROW(Lair::loadReleaseQueueFromConfig("/home/gkasp/oop2024/3/tests/configs/releaseEnemies_config.csv"));
-    Lair::loadReleaseQueueFromConfig("/home/gkasp/oop2024/3/tests/configs/releaseEnemies_config.csv");
+    EXPECT_NO_THROW(Lair::loadReleaseQueueFromConfig("tests/configs/releaseEnemies_config.csv"));
+    Lair::loadReleaseQueueFromConfig("tests/configs/releaseEnemies_config.csv");
     EXPECT_EQ(Lair::getReleaseQueue().top().type, "LightInfantry");
     EXPECT_EQ(Lair::getReleaseQueue().top().time, 2);
     EXPECT_EQ(Lair::getReleaseQueue().top().interval, 2);
@@ -123,8 +123,8 @@ TEST(LairTests, releaseEnemy){
 
 TEST(LairTests, releaseEnemyOnTime){
     Lair lair{};
-    Lair::loadStatsFromConfig("/home/gkasp/oop2024/3/tests/configs/enemies_config.csv");
-    Lair::loadReleaseQueueFromConfig("/home/gkasp/oop2024/3/tests/configs/releaseEnemies_config.csv");
+    Lair::loadStatsFromConfig("tests/configs/enemies_config.csv");
+    Lair::loadReleaseQueueFromConfig("tests/configs/releaseEnemies_config.csv");
 
     EXPECT_NO_THROW(lair.releaseEnemyOnTime(2));
     EXPECT_EQ(Lair::getReleaseQueue().top().type, "LightInfantry");
@@ -137,7 +137,7 @@ TEST(LairTests, releaseEnemyOnTime){
 
 TEST(LairTests, makeMove) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto lairPos = game.getLandscape()->getLairPosition();
     auto lair = game.getLandscape()->getStructureByPosition(lairPos);
     EXPECT_NO_THROW(lair->makeMove());

@@ -6,8 +6,8 @@
 #include "lair.h"
 
 TEST(StructureFactoryTests, loadStatsFromConfig){
-    EXPECT_NO_THROW(StructureFactory::loadStatsFromConfig("/home/gkasp/oop2024/3/tests/configs/structuresStats_config.csv"));
-    StructureFactory::loadStatsFromConfig("/home/gkasp/oop2024/3/tests/configs/structuresStats_config.csv");
+    EXPECT_NO_THROW(StructureFactory::loadStatsFromConfig("tests/configs/structuresStats_config.csv"));
+    StructureFactory::loadStatsFromConfig("tests/configs/structuresStats_config.csv");
     auto wallStats = StructureFactory::StructuresStatsTable_["Wall"];
     EXPECT_EQ(std::static_pointer_cast<WallStats>(wallStats[0])->upgradeCost_, 300);
     EXPECT_EQ(std::static_pointer_cast<WallStats>(wallStats[1])->maxHP_, 700);

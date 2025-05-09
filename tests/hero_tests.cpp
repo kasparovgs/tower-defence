@@ -6,8 +6,8 @@
 
 TEST(HeroTests, findPathAviation){
     auto landscape = std::make_shared<Landscape>();
-    landscape->changeFieldFromCSV("/home/gkasp/oop2024/3/tests/configs/");
-    landscape->changeStructuresFromCSV("/home/gkasp/oop2024/3/tests/configs/");
+    landscape->changeFieldFromCSV("tests/configs/");
+    landscape->changeStructuresFromCSV("tests/configs/");
     auto enemy = std::static_pointer_cast<Enemy>(std::make_shared<Hero<Aviation>>());
     enemy->setLandscape(landscape);
     enemy->findPath();
@@ -25,8 +25,8 @@ TEST(HeroTests, findPathAviation){
 
 TEST(HeroTests, findPathLightInfantry){
     auto landscape = std::make_shared<Landscape>();
-    landscape->changeFieldFromCSV("/home/gkasp/oop2024/3/tests/configs/");
-    landscape->changeStructuresFromCSV("/home/gkasp/oop2024/3/tests/configs/");
+    landscape->changeFieldFromCSV("tests/configs/");
+    landscape->changeStructuresFromCSV("tests/configs/");
     auto enemy = std::static_pointer_cast<Enemy>(std::make_shared<Hero<LightInfantry>>());
     enemy->setLandscape(landscape);
     enemy->findPath();
@@ -43,8 +43,8 @@ TEST(HeroTests, findPathLightInfantry){
 
 TEST(HeroTests, findPathHeavyInfantry){
     auto landscape = std::make_shared<Landscape>();
-    landscape->changeFieldFromCSV("/home/gkasp/oop2024/3/tests/configs/");
-    landscape->changeStructuresFromCSV("/home/gkasp/oop2024/3/tests/configs/");
+    landscape->changeFieldFromCSV("tests/configs/");
+    landscape->changeStructuresFromCSV("tests/configs/");
     auto enemy = std::static_pointer_cast<Enemy>(std::make_shared<Hero<HeavyInfantry>>());
     enemy->setLandscape(landscape);
     enemy->findPath();
@@ -95,7 +95,7 @@ TEST(HeroTests, takeDamage){
 
 TEST(HeroTests, aurasApplyingAndRemoving) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto structure = game.getLandscape()->getStructureByPosition({0, 0});
     auto lair = std::static_pointer_cast<Lair>(structure);
     auto hero = lair->releaseEnemy("HeroHeavyInfantry", 4);
@@ -129,7 +129,7 @@ TEST(HeroTests, aurasApplyingAndRemoving) {
 
 TEST(HeroTests, destructor) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto structure = game.getLandscape()->getStructureByPosition({0, 0});
     auto lair = std::static_pointer_cast<Lair>(structure);
     auto enemy = lair->releaseEnemy("Aviation", 4);

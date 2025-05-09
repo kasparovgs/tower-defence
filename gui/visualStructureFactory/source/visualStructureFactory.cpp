@@ -2,34 +2,34 @@
 #include "textureManager.h"
 
 std::unordered_map<int, std::string> wallTextures = {
-    {1, "/home/gkasp/oop2024/3/gui/sprites/wallSprites/wall1.png"},
-    {2, "/home/gkasp/oop2024/3/gui/sprites/wallSprites/wall2.png"},
-    {3, "/home/gkasp/oop2024/3/gui/sprites/wallSprites/wall3.png"},
-    {4, "/home/gkasp/oop2024/3/gui/sprites/wallSprites/wall4.png"}
+    {1, "gui/sprites/wallSprites/wall1.png"},
+    {2, "gui/sprites/wallSprites/wall2.png"},
+    {3, "gui/sprites/wallSprites/wall3.png"},
+    {4, "gui/sprites/wallSprites/wall4.png"}
 };
 
 
 std::unordered_map<int, std::string> castleTextures = {
-    {1, "/home/gkasp/oop2024/3/gui/sprites/castleSprites/castle1.png"},
-    {2, "/home/gkasp/oop2024/3/gui/sprites/castleSprites/castle2.png"},
-    {3, "/home/gkasp/oop2024/3/gui/sprites/castleSprites/castle3.png"},
-    {4, "/home/gkasp/oop2024/3/gui/sprites/castleSprites/castle4.png"}
+    {1, "gui/sprites/castleSprites/castle1.png"},
+    {2, "gui/sprites/castleSprites/castle2.png"},
+    {3, "gui/sprites/castleSprites/castle3.png"},
+    {4, "gui/sprites/castleSprites/castle4.png"}
 };
 
 
 std::unordered_map<int, std::string> towerTextures = {
-    {1, "/home/gkasp/oop2024/3/gui/sprites/towerSprites/tower1.png"},
-    {2, "/home/gkasp/oop2024/3/gui/sprites/towerSprites/tower2.png"},
-    {3, "/home/gkasp/oop2024/3/gui/sprites/towerSprites/tower3.png"},
-    {4, "/home/gkasp/oop2024/3/gui/sprites/towerSprites/tower4.png"}
+    {1, "gui/sprites/towerSprites/tower1.png"},
+    {2, "gui/sprites/towerSprites/tower2.png"},
+    {3, "gui/sprites/towerSprites/tower3.png"},
+    {4, "gui/sprites/towerSprites/tower4.png"}
 };
 
 
 std::unordered_map<int, std::string> lairTextures = {
-    {1, "/home/gkasp/oop2024/3/gui/sprites/lairSprites/lair1.png"},
-    {2, "/home/gkasp/oop2024/3/gui/sprites/lairSprites/lair2.png"},
-    {3, "/home/gkasp/oop2024/3/gui/sprites/lairSprites/lair3.png"},
-    {4, "/home/gkasp/oop2024/3/gui/sprites/lairSprites/lair4.png"}
+    {1, "gui/sprites/lairSprites/lair1.png"},
+    {2, "gui/sprites/lairSprites/lair2.png"},
+    {3, "gui/sprites/lairSprites/lair3.png"},
+    {4, "gui/sprites/lairSprites/lair4.png"}
 };
 
 

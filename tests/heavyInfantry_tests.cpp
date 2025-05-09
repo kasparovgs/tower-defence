@@ -21,8 +21,8 @@ TEST(HeavyInfantryTests, Constructor){
 
 TEST(HeavyInfantryTests, findPath){
     auto landscape = std::make_shared<Landscape>();
-    landscape->changeFieldFromCSV("/home/gkasp/oop2024/3/tests/configs/");
-    landscape->changeStructuresFromCSV("/home/gkasp/oop2024/3/tests/configs/");
+    landscape->changeFieldFromCSV("tests/configs/");
+    landscape->changeStructuresFromCSV("tests/configs/");
     auto enemy = std::static_pointer_cast<Enemy>(std::make_shared<HeavyInfantry>());
     enemy->setLandscape(landscape);
     enemy->findPath();
@@ -56,7 +56,7 @@ TEST(HeavyInfantryTests, takeDamage){
 
 TEST(HeavyInfantryTests, makeMove) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     HeavyInfantry enemy("abc", 1000, 1000, 10, {0, 0}, 1, 200, 5);
     enemy.setLandscape(game.getLandscape()->getSelf());
     enemy.findPath();

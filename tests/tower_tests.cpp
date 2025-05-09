@@ -6,7 +6,7 @@
 
 TEST(TowerTests, dealDamage) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto structure = game.getLandscape()->getStructureByPosition({4,9});
     auto tower = std::static_pointer_cast<Tower>(structure);
     EXPECT_NO_THROW(tower->dealDamage());
@@ -16,7 +16,7 @@ TEST(TowerTests, dealDamage) {
 
 TEST(TowerTests, levelUp) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto structure = game.getLandscape()->getStructureByPosition({4,9});
     auto tower = std::static_pointer_cast<Tower>(structure);
     auto prevLevel = tower->getLevel();
@@ -29,7 +29,7 @@ TEST(TowerTests, levelUp) {
 
 TEST(TowerTests, makeMove) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto structure = game.getLandscape()->getStructureByPosition({4,9});
     auto tower = std::static_pointer_cast<Tower>(structure);
 

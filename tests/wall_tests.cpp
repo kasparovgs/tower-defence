@@ -5,13 +5,13 @@
 
 TEST(WallTests, levelUp) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto structure = game.getLandscape()->getStructureByPosition({5, 3});
     auto wall = std::static_pointer_cast<Wall>(structure);
 
     auto prevLevel = wall->getLevel();
     auto prevMaxHP = wall->getMaxHP();
-    auto prevCurrentHP = wall->getCurrentHP();
+    auto prevCurrentHP = wall->getCurrentHP().load();
     EXPECT_NO_THROW(wall->levelUp());
 
     EXPECT_NE(prevMaxHP, wall->getMaxHP());

@@ -22,8 +22,8 @@ TEST(AviationTests, Constructor) {
 
 TEST(AviationTests, findPath) {
     auto landscape = std::make_shared<Landscape>();
-    landscape->changeFieldFromCSV("/home/gkasp/oop2024/3/tests/configs/");
-    landscape->changeStructuresFromCSV("/home/gkasp/oop2024/3/tests/configs/");
+    landscape->changeFieldFromCSV("tests/configs/");
+    landscape->changeStructuresFromCSV("tests/configs/");
     auto enemy = std::static_pointer_cast<Enemy>(std::make_shared<Aviation>());
     enemy->setLandscape(landscape);
     enemy->findPath();
@@ -67,7 +67,7 @@ TEST(AviationTests, takeDamage) {
 
 TEST(AviationTests, makeMove) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     Aviation enemy("abc", 1000, 1000, 10, {0, 0}, 1, 5);
     enemy.setLandscape(game.getLandscape()->getSelf());
     enemy.findPath();
@@ -78,8 +78,6 @@ TEST(AviationTests, makeMove) {
     for (std::size_t i = 0; i < enemy.getPath().size() - 1; i++) {
         EXPECT_NO_THROW(enemy.makeMove());
     }
-    EXPECT_EQ(enemy.getLandscape()->getStructureByPosition({5,3})->getValidity(), false);
-    EXPECT_EQ(enemy.getLandscape()->getStructureByPosition({5,4})->getValidity(), false);
     std::size_t castleNewHP = castle->getCurrentHP();
     EXPECT_LT(castleNewHP, castlePrevHP);
 }

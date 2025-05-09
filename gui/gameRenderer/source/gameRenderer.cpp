@@ -10,10 +10,10 @@
 GameRenderer::GameRenderer(sf::RenderWindow& window,
                            Game& game) :  window_(window),
                                           game_(game) {
-    sf::Texture& mapTexture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/map.png");
+    sf::Texture& mapTexture = TextureManager::getTexture("gui/sprites/pictures/map.png");
     mapSprite_.setTexture(mapTexture);
 
-    if (!font_.loadFromFile("/home/gkasp/oop2024/3/gui/fonts/KZSupercell-Magic.ttf")) {
+    if (!font_.loadFromFile("gui/fonts/KZSupercell-Magic.ttf")) {
         throw std::invalid_argument("The font is incorrect");
     }
 
@@ -37,7 +37,7 @@ GameRenderer::GameRenderer(sf::RenderWindow& window,
     elements_["TimeText"] = timeTextPtr;
 
 
-    sf::Texture& buttonMakeMoveTexture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/buttons/makeMoveButton.png");
+    sf::Texture& buttonMakeMoveTexture = TextureManager::getTexture("gui/sprites/buttons/makeMoveButton.png");
     sf::Sprite buttonMakeMoveSprite;
     buttonMakeMoveSprite.setTexture(buttonMakeMoveTexture);
     buttonMakeMoveSprite.setScale(0.8f, 0.8f);
@@ -45,7 +45,7 @@ GameRenderer::GameRenderer(sf::RenderWindow& window,
     auto buttonMakeMoveSpritePtr = std::make_shared<sf::Sprite>(buttonMakeMoveSprite);
     elements_["MakeMoveButton"] = buttonMakeMoveSpritePtr;
 
-    sf::Texture& buttonCollectGoldTexture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/buttons/collectGoldButton.png");
+    sf::Texture& buttonCollectGoldTexture = TextureManager::getTexture("gui/sprites/buttons/collectGoldButton.png");
     sf::Sprite buttonCollectGoldSprite;
     buttonCollectGoldSprite.setTexture(buttonCollectGoldTexture);
     buttonCollectGoldSprite.setScale(0.6f, 0.6f);
@@ -64,7 +64,7 @@ GameRenderer::GameRenderer(sf::RenderWindow& window,
     auto collectGoldTextPtr = std::make_shared<sf::Text>(collectGoldText);
     elements_["CollectGoldText"] = collectGoldTextPtr;
 
-    sf::Texture& buttonLevelUpTexture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/buttons/levelUpButton.png");
+    sf::Texture& buttonLevelUpTexture = TextureManager::getTexture("gui/sprites/buttons/levelUpButton.png");
     sf::Sprite buttonLevelUpSprite;
     buttonLevelUpSprite.setTexture(buttonLevelUpTexture);
     buttonLevelUpSprite.setScale(0.8f, 0.8f);
@@ -72,7 +72,7 @@ GameRenderer::GameRenderer(sf::RenderWindow& window,
     auto buttonLevelUpSpritePtr = std::make_shared<sf::Sprite>(buttonLevelUpSprite);
     elements_["LevelUpButton"] = buttonLevelUpSpritePtr;
 
-    sf::Texture& NoMoneyTexture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/noMoneyAlert.png");
+    sf::Texture& NoMoneyTexture = TextureManager::getTexture("gui/sprites/pictures/noMoneyAlert.png");
     sf::Sprite NoMoneySprite;
     NoMoneySprite.setTexture(NoMoneyTexture);
     NoMoneySprite.setScale(0.8f, 0.8f);
@@ -80,7 +80,7 @@ GameRenderer::GameRenderer(sf::RenderWindow& window,
     auto NoMoneySpritePtr = std::make_shared<sf::Sprite>(NoMoneySprite);
     elements_["NoMoneyAlert"] = NoMoneySpritePtr;
 
-    sf::Texture& StructureAlreadyMaxedTexture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/structureAlreadyMaxed.png");
+    sf::Texture& StructureAlreadyMaxedTexture = TextureManager::getTexture("gui/sprites/pictures/structureAlreadyMaxed.png");
     sf::Sprite StructureAlreadyMaxedSprite;
     StructureAlreadyMaxedSprite.setTexture(StructureAlreadyMaxedTexture);
     StructureAlreadyMaxedSprite.setScale(0.8f, 0.8f);
@@ -88,7 +88,7 @@ GameRenderer::GameRenderer(sf::RenderWindow& window,
     auto StructureAlreadyMaxedSpritePtr = std::make_shared<sf::Sprite>(StructureAlreadyMaxedSprite);
     elements_["StructureAlreadyMaxed"] = StructureAlreadyMaxedSpritePtr;
 
-    sf::Texture& StructureUpgradeSuccessTexture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/structureUpgradeSuccess.png");
+    sf::Texture& StructureUpgradeSuccessTexture = TextureManager::getTexture("gui/sprites/pictures/structureUpgradeSuccess.png");
     sf::Sprite StructureUpgradeSuccessSprite;
     StructureUpgradeSuccessSprite.setTexture(StructureUpgradeSuccessTexture);
     StructureUpgradeSuccessSprite.setScale(0.8f, 0.8f);
@@ -96,7 +96,7 @@ GameRenderer::GameRenderer(sf::RenderWindow& window,
     auto StructureUpgradeSuccessSpritePtr = std::make_shared<sf::Sprite>(StructureUpgradeSuccessSprite);
     elements_["StructureUpgradeSucces"] = StructureUpgradeSuccessSpritePtr;
 
-    sf::Texture& GameOverLostTexture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/gameOverLost.png");
+    sf::Texture& GameOverLostTexture = TextureManager::getTexture("gui/sprites/pictures/gameOverLost.png");
     sf::Sprite GameOverLostSprite;
     GameOverLostSprite.setTexture(GameOverLostTexture);
     GameOverLostSprite.setScale(0.8f, 0.8f);
@@ -305,7 +305,7 @@ std::unordered_map<std::type_index,
                                                 std::size_t level,
                                                 std::size_t currentHP) {
         auto aviationStats = std::static_pointer_cast<AviationStats>(enemyStats);
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/enemyAviationStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/enemyAviationStats.png");
         sf::Sprite enemyStatsSprite;
         enemyStatsSprite.setTexture(texture);
         enemyStatsSprite.setPosition(0, 50);
@@ -344,7 +344,7 @@ std::unordered_map<std::type_index,
                                                      std::size_t level,
                                                      std::size_t currentHP) {
         auto lightStats = std::static_pointer_cast<LightInfantryStats>(enemyStats);
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/enemyLightInfantryStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/enemyLightInfantryStats.png");
         sf::Sprite enemyStatsSprite;
         enemyStatsSprite.setTexture(texture);
         enemyStatsSprite.setPosition(0, 50);
@@ -383,7 +383,7 @@ std::unordered_map<std::type_index,
                                                      std::size_t level,
                                                      std::size_t currentHP) {
         auto heavyStats = std::static_pointer_cast<HeavyInfantryStats>(enemyStats);
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/enemyHeavyInfantryStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/enemyHeavyInfantryStats.png");
         sf::Sprite enemyStatsSprite;
         enemyStatsSprite.setTexture(texture);
         enemyStatsSprite.setPosition(0, 50);
@@ -426,7 +426,7 @@ std::unordered_map<std::type_index,
                                                      std::size_t level,
                                                      std::size_t currentHP) {
         auto heroAviationStats = std::static_pointer_cast<HeroStats<AviationStats>>(enemyStats);
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/enemyHeroAviationStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/enemyHeroAviationStats.png");
         sf::Sprite enemyStatsSprite;
         enemyStatsSprite.setTexture(texture);
         enemyStatsSprite.setPosition(0, 50);
@@ -469,7 +469,7 @@ std::unordered_map<std::type_index,
                                                      std::size_t level,
                                                      std::size_t currentHP) {
         auto heroLightStats = std::static_pointer_cast<HeroStats<LightInfantryStats>>(enemyStats);
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/enemyHeroLightInfantryStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/enemyHeroLightInfantryStats.png");
         sf::Sprite enemyStatsSprite;
         enemyStatsSprite.setTexture(texture);
         enemyStatsSprite.setPosition(0, 50);
@@ -512,7 +512,7 @@ std::unordered_map<std::type_index,
                                                      std::size_t level,
                                                      std::size_t currentHP) {
         auto heroHeavyStats = std::static_pointer_cast<HeroStats<HeavyInfantryStats>>(enemyStats);
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/enemyHeroHeavyInfantryStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/enemyHeroHeavyInfantryStats.png");
         sf::Sprite enemyStatsSprite;
         enemyStatsSprite.setTexture(texture);
         enemyStatsSprite.setPosition(0, 50);
@@ -564,7 +564,7 @@ std::unordered_map<std::type_index,
                                        const sf::Font& font,
                                        std::size_t level) {
         auto wallStats = std::static_pointer_cast<WallStats>(structureStats);
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/structureWallStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/structureWallStats.png");
         sf::Sprite structureStatsSprite;
         structureStatsSprite.setTexture(texture);
         structureStatsSprite.setPosition(0, 50);
@@ -595,7 +595,7 @@ std::unordered_map<std::type_index,
                                        std::size_t level) {
         auto towerStats = std::static_pointer_cast<TowerStats>(structureStats);
 
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/structureTowerStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/structureTowerStats.png");
         sf::Sprite structureStatsSprite;
         structureStatsSprite.setTexture(texture);
         structureStatsSprite.setPosition(0, 50);
@@ -630,7 +630,7 @@ std::unordered_map<std::type_index,
                                        std::size_t level) {
         auto castleStats = std::static_pointer_cast<CastleStats>(structureStats);
 
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/structureCastleStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/structureCastleStats.png");
         sf::Sprite structureStatsSprite;
         structureStatsSprite.setTexture(texture);
         structureStatsSprite.setPosition(0, 50);
@@ -668,7 +668,7 @@ std::unordered_map<std::type_index,
                                        const sf::Font& font,
                                        std::size_t level) {
 
-        sf::Texture& texture = TextureManager::getTexture("/home/gkasp/oop2024/3/gui/sprites/pictures/structureLairStats.png");
+        sf::Texture& texture = TextureManager::getTexture("gui/sprites/pictures/structureLairStats.png");
         sf::Sprite structureStatsSprite;
         structureStatsSprite.setTexture(texture);
         structureStatsSprite.setPosition(0, 50);

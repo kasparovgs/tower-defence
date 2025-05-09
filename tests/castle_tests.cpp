@@ -5,7 +5,7 @@
 
 TEST(CastleTests, levelUp) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto castlePos = game.getLandscape()->getCastlePosition();
     auto structure = game.getLandscape()->getStructureByPosition(castlePos);
     auto castle = std::static_pointer_cast<Castle>(structure);
@@ -33,7 +33,7 @@ TEST(CastleTests, levelUp) {
 
 TEST(CastleTests, collectAccumulatedGold) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto castlePos = game.getLandscape()->getCastlePosition();
     auto structure = game.getLandscape()->getStructureByPosition(castlePos);
     auto castle = std::static_pointer_cast<Castle>(structure);
@@ -50,7 +50,7 @@ TEST(CastleTests, collectAccumulatedGold) {
 
 TEST(CastleTests, makeMove) {
     Game game{};
-    game.initGame("/home/gkasp/oop2024/3/tests/configs/");
+    game.initGame("tests/configs/");
     auto castlePos = game.getLandscape()->getCastlePosition();
     auto structure = game.getLandscape()->getStructureByPosition(castlePos);
     auto castle = std::static_pointer_cast<Castle>(structure);
